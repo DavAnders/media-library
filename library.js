@@ -146,5 +146,7 @@ function mainMenu() {
 }
 
   
-mainMenu()
+module.exports = {
+    mainMenu
+}
     
