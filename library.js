@@ -63,6 +63,29 @@ function deleteEntry() {
     })
 }
 
+function viewEntries() {
+    if (!fs.existsSync(mediaLibraryPath)) {
+        console.log('No media library found at the given path. Please add some entries first.')
+        return
+    }
+    // read/parse media library file
+    const library = JSON.parse(fs.readFileSync(mediaLibraryPath, 'utf-8'))
+    // check if library is empty
+    if (Object.keys(library.length === 0)) {
+        console.log('Your media library is currently empty.')
+        return
+    }
+    console.log('Your media library:')
+    for (const type in library) {
+        console.log(`\n${type}:`)
+        library[type].forEach((entry, index) => {
+            console.log(`${index + 1}. Title: ${entry.title}, Score: ${entry.score}/10, 
+            Thoughts:${entry.thoughts || 'N/A'}`)
+        })
+    }
+
+}
+
 function promptUser() {
     inquirer.prompt([
         {
