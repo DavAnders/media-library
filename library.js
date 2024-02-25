@@ -124,25 +124,30 @@ function mainMenu() {
             choices: [
                 { name: 'Add a new entry', value: 'add' },
                 { name: 'Delete an existing entry', value: 'delete' },
+                { name: 'View all entries', value: 'view'},
                 { name: 'Exit', value: 'exit' }
             ]
         }
     ]).then(answer => {
         switch (answer.action) {
             case 'add':
-                promptUser();
-                break;
+                promptUser()
+                break
             case 'delete':
-                deleteEntry();
-                break;
+                deleteEntry()
+                break
+            case 'view':
+                viewEntries()
+                mainMenu()
+                break
             case 'exit':
-                console.log('Goodbye!');
-                break;
+                console.log('Goodbye!')
+                break
             default:
-                console.log('Invalid choice');
-                mainMenu(); // call mainMenu to prompt the choices again
+                console.log('Invalid choice')
+                mainMenu() // call mainMenu to prompt the choices again
         }
-    });
+    })
 }
 
   
