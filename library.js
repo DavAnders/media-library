@@ -71,7 +71,7 @@ function viewEntries() {
     // read/parse media library file
     const library = JSON.parse(fs.readFileSync(mediaLibraryPath, 'utf-8'))
     // check if library is empty
-    if (Object.keys(library.length === 0)) {
+    if (Object.keys(library).length === 0) {
         console.log('Your media library is currently empty.')
         return
     }
