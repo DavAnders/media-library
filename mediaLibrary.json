@@ -1,18 +1,1 @@
-{
-  "Album": [
-    {
-      "type": "Album",
-      "title": "Test",
-      "score": "10",
-      "thoughts": "Test"
-    }
-  ],
-  "Movie": [
-    {
-      "type": "Movie",
-      "title": "Test",
-      "score": "5",
-      "thoughts": ""
-    }
-  ]
-}
+{}
